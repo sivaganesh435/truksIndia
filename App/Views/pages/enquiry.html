@@ -1,0 +1,57 @@
+{% extends "base.php" %}
+{% block body%}
+<main>
+        <!-- email enquiry form -->
+        <div class="email-enquiry bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 pt-5 pb-5">
+                        <article class="card shadow mx-auto" style="max-width: 500px;">
+                            <h4 class="card-title mt-5 pb-3 text-center">Enquiry</h4>
+                            {% if success == true %}
+                                <div class="alert alert-success">
+                                    <strong>Success!</strong> Your Enquiry successfully recorded, will contact you very soon.
+                                </div>
+                            {% endif %}
+                            <form class="px-lg-5" action="/enquiries/saveEnquiry" method="POST">
+                                <input type="hidden" name="form" value="{{ type }}">
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                    </div>
+                                    <input name="name" value="{{ name }}"  class="form-control" placeholder="Full name" type="text">
+                                </div> <!-- form-group// -->
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                    </div>
+                                    <input name="email" value="{{ email }}" class="form-control" placeholder="Email address" type="email">
+                                </div> <!-- form-group// -->
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                                    </div>
+                                    <input name="phone" value="{{ phone }}" class="form-control" placeholder="Phone Number" type="text">
+                                </div> <!-- form-group// -->
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-file-text"></i> </span>
+                                    </div>
+                                    <input name="subject" class="form-control" placeholder="Subject" type="text">
+                                </div> <!-- form-group// -->
+                                <div class="form-group">
+                                    <textarea class="form-control" name="feedback-message" rows="5"
+                                        placeholder="Write your message"></textarea>
+                                </div>
+                                <div class="form-group mb-5">
+                                    <button type="submit" class="btn btn-primary btn-grad btn-block"> Submit Enquiry</button>
+                                </div> <!-- form-group// -->
+                            </form>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

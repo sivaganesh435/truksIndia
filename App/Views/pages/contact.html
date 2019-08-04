@@ -1,0 +1,93 @@
+{% extends "base.php" %}
+{% block body %}
+
+    <main>
+    <div class="page-hero-top btn-grad">
+      <div class="hero-top-content text-center pb-5 pt-5">
+        <h1 class="pb-3 pt-3 text-white font-weight-bold">Get In Touch</h1>
+      </div>
+    </div>
+    <div class="page-content bg-light contact-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-5">
+            <div class="address-wrapper widget widget-about pt-5">
+              <h3 class="pb-4">Address</h3>
+              <ul>
+                <li> <i class="fa fa-phone"></i> <b class="text-uppercase">Tel :</b> 7075575239
+                </li>
+                <li><i class="fa fa-envelope"></i> <b class="text-uppercase">Email :
+                  </b>info@truksindia.com</li>
+                <li><i class="fa fa-location-arrow"></i> <b class="text-uppercase">Location :</b>
+                  IO BUSINESS CENTER, Unit No.406,B3,4th Floor, Manjeera Trinity Corporate, Kukatpally, Hyderabad-500072
+                </li>
+              </ul>
+            </div>
+            <div class="location-map mt-5">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d487293.2774677608!2d78.12784000692413!3d17.412808363619543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C+Telangana!5e0!3m2!1sen!2sin!4v1564212891123!5m2!1sen!2sin"
+                width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="col-md-6  col-lg-6 offset-lg-1">
+            <div class="pb-4 pt-5">
+              <h3>Leave a message</h3>
+            </div>
+              {% if success == true %}
+                    <div class="alert alert-success">
+                        <strong>Success!</strong> Your request was successfully recorded, will contact you very soon.
+                    </div>
+                {% endif %}
+              <form class="pr-md-5" action="../enquiries/contactForm" method="POST">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Your Name *</label>
+                    <input name="contact-name" placeholder="your name"  type="text" class="form-control" required="">
+                    <div class="invalid-feedback">
+                      Please type your name.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Email Address *</label>
+                    <input name="contact-email" type="email" placeholder="you@yoursite.com" class="form-control"
+                      required="">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Company Name</label>
+                    <input name="contact-company" placeholder="company name" type="text" class="form-control"
+                      >
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Contact Number</label>
+                    <input name="contact-phone" placeholder="contact no." type="tel" class="form-control" >
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>Message:</label>
+                    <textarea class="form-control" name="contact-message" rows="5"
+                      placeholder="How can we help?"></textarea>
+                  </div>
+                </div>
+                <div class="col-12 mb-5">
+                  <button type="submit" class="btn btn-primary btn-grad">Send Enquiry
+                  </button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+{% endblock %}
