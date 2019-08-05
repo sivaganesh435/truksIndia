@@ -1,169 +1,129 @@
+    
 {% extends "base.php" %}
 
 {% block body%}
-
-<div class="page-hero-top btn-grad-2">
+<!-- page-hero -->
+    <div class="page-hero-top btn-grad-2">
       <div class="hero-top-content text-center pb-5 pt-5">
-        <h1 class="pb-3 pt-3 text-white font-weight-bold">Enterprise</h1>
+        <h1 class="pb-3 pt-3 text-white font-weight-bold">Are you looking of Transport Services?</h1>
       </div>
     </div>
     <!-- page-content -->
-    <div class="page-content bg-light about-content pb-md-4 pt-md-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-lg-8 offset-lg-2 pb-5 pt-5">
-            <h4 class="pb-3">Focus on your own business growth , we will do the rest for you
-            </h4>
-            <p class="pb-3">Gain an upper edge over your business competitors by channelizing your time , cost and
-              effort on your very own business milestones.
-            </p>
-            <div class="pb-4">
-              <strong class="pb-2 d-block">Current Operational Limitations</strong>
-              <ul>
-                <li>- Logistics company's vehicle sourcing team looking out for vehicles and adding to the inventory
-                  system</li>
-                <li>- Incuring the cost by self incase the vehicles are not sourced on time</li>
-                <li>- Also leads to significant potential threat of losing key clientele to the other market competitors
-                </li>
-              </ul>
+    <div class="page-content about-content pb-md-4">
+      <div class="bg-light pt-md-4 pb-md-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-7 pb-5 pt-5 pr-lg-5">
+              <h4 class="pb-3">Focus on your own business growth , we will do the rest for you
+              </h4>
+              <p>We are India’s first largest vendor management company providing a comprehensive logistics solutions catering the needs of our logistics partners.</p>
+              <p class="pb-3">Gain an upper edge over your business competitors by channelizing your time , cost and
+                effort on your very own business milestones.
+              </p>
+              <div class="pb-4">
+                <strong class="pb-2 d-block">Current Operational Limitations</strong>
+                <ul>
+                  <li>- Logistics company's vehicle sourcing team looking out for vehicles and adding to the inventory
+                    system</li>
+                  <li>- Incuring the cost by self incase the vehicles are not sourced on time</li>
+                  <li>- Also leads to significant potential threat of losing key clientele to the other market
+                    competitors
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <strong class="pb-2 d-block">What we can do for you</strong>
+                <ul>
+                  <li>- One stop platform wherein we source and maintain the vehicle fleet on your behalf</li>
+                  <li>- Save upfront on your operational expenses with no need of having your own vehicle sourcing team
+                  </li>
+                  <li>- Any cargo to Any distance , we are here to cater your personalised needs that can help your
+                    business grow</li>
+                </ul>
+              </div>
+              <p class="pb-3 pt-3">Truks India solutions are targeted at logistics-intensive industries across e-commerce,
+                food, consumer goods, utilities, retail,Pharmacy industries, manufacturing industries, beverage, and
+                other express transportation.
+              </p>
+              <div>
+                  <strong class="pb-2 d-block">Our team of talented professionals have wide array of experience in helping our logistics partners through</strong>
+                  <ul>
+                    <li>- Constant tracking and analytics around ime service, goods safety, merchandise quality, distance traveled, variable quotes</li>
+                    <li>- Tracking the Service Level Agreement (SLA) compliance, control hassles prices on month on month and feedback capture
+                    </li>
+                    <li>- Providing  Temperature Control(Clod Vehicles), TataAce7feet,Super Ace 8feet,Tata407,Tata14feet...up to 32feet</li>
+                  </ul>
+              </div>
+              <p class="pb-2 pt-3">All you are required to do is to list your company with us by filling the simple enquiry form. You can also advertise your business with us as per your budget and needs. </p>
             </div>
-            <div>
-              <strong class="pb-2 d-block">What we can do for you</strong>
-              <ul>
-                <li>- One stop platform wherein we source and maintain the vehicle fleet on your behalf</li>
-                <li>- Save upfront on your operational expenses with no need of having your own vehicle sourcing team
-                </li>
-                <li>- Any cargo to Any distance , we are here to cater your personalised needs that can help your
-                  business grow</li>
-              </ul>
+            <div class="col-12 mt-lg-5 mb-lg-5 col-lg-5">
+              <article class="card shadow mx-auto" style="max-width: 500px;">
+                <h4 class="card-title mt-5 pb-3 text-center">Enterprise Enquiry</h4>
+                <form action="../enquiries/enquiryForm" class="px-lg-5" method="POST">
+            		<input type="hidden" name="type" value="enterprise">
+          		{% include 'pagesForms.html' %}
+          		</form>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-join-truksindia bg-gray-2 pt-5 pb-5">
+        <div class="container pb-3">
+          <div class="row">
+            <div class="col-12">
+              <div class="header  pb-4 text-center">
+                <h3>Why Join TruksIndia</h3>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="mt-icon-box-wraper card">
+                <div class="card-icon">
+                  <div class="icon-wrapper mb-4 mt-1">
+                    <i class="flaticon-credit-card"></i>
+                  </div>
+                </div>
+                <div class="icon-content text-center">
+                  <h4 class="mt-tilte">Transparent pricing</h4>
+                  <p>The price you see is the price you pay, no hidden cost, no extra pays. You just select the one you can offord and that's all.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="mt-icon-box-wraper card">
+                <div class="card-icon">
+                  <div class="icon-wrapper mb-4 mt-1">
+                    <i class="flaticon-hourglass"></i>
+                  </div>
+                </div>
+                <div class="icon-content text-center">
+                  <h4 class="mt-tilte">Real time tracking</h4>
+                  <p>We give you the flexibility to track your order every single moment and enjoy the delivery process while you relax.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="mt-icon-box-wraper card">
+                <div class="card-icon">
+                  <div class="icon-wrapper mb-4 mt-1">
+                    <i class="flaticon-connection"></i>
+                  </div>
+                </div>
+                <div class="icon-content text-center">
+                  <h4 class="mt-tilte">Safe and reliable</h4>
+                  <p>With Transparency and Real Time tracking, we guarantee safety and reliability. Our drivers are well aware of your parcel and order and we are aware of Drivers we hire.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- enquiry form -->
-    <div class="enquery-form-wrapper pt-5 pb-5">
-      <div class="enquery-form-overlay"></div>
-      <div class="container pt-md-3">
-        <form action="../enquiries/enquiryForm" method="POST">
-            <input type="hidden" name="type" value="Enterprise">
-          {% include 'blocks.html' %}
-          </form>
-      </div>
-
-    </div>
+    
     <!-- testimonials -->
-    <div class="section-full section-testimonials-wrapper pt-5 pb-5">
-      <div class="container">
-        <!-- TITLE START-->
-        <div class="section-head text-center pt-3">
-          <h2 data-title="feedback">clients-feedback</h2>
-          <div class="mt-separator-outer">
-            <div class="mt-separator bg-primary"></div>
-          </div>
-        </div>
-        <!-- TITLE END-->
-        <div class="section-testimonials owl-carousel owl-theme">
-          <div class="card-wrapper">
-            <div class="top-image">
-              <img src="{{ base_url }}img/testinomial.png" alt="testimonials">
-            </div>
-            <div class="box text-center btn-grad-2">
-              <div class="card-body text-white">
-                <div class="start-ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-                <p>Aliquam ultrices venenatis mauris. Vestibulum ante ipsum primis in faucibus orci industry, logistics,
-                  finance, business. Aliquam ultrices venenatis mauris. Vestibulum luctus et.</p>
-              </div>
-              <div class="card-footer bg-light">
-                <div class="client-info">
-                  <h6>John Doe</h6>
-                  <small>Lorem Ipsum</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-wrapper">
-            <div class="top-image">
-              <img src="{{ base_url }}img/testinomial.png" alt="testimonials">
-            </div>
-            <div class="box text-center btn-grad-2">
-              <div class="card-body text-white">
-                <div class="start-ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-                <p>Aliquam ultrices venenatis mauris. Vestibulum ante ipsum primis in faucibus orci industry, logistics,
-                  finance, business. Aliquam ultrices venenatis mauris. Vestibulum luctus et.</p>
-              </div>
-              <div class="card-footer bg-light">
-                <div class="client-info">
-                  <h6>John Doe</h6>
-                  <small>Lorem Ipsum</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-wrapper">
-            <div class="top-image">
-              <img src="{{ base_url }}img/testinomial.png" alt="testimonials">
-            </div>
-            <div class="box text-center btn-grad-2">
-              <div class="card-body text-white">
-                <div class="start-ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-                <p>Aliquam ultrices venenatis mauris. Vestibulum ante ipsum primis in faucibus orci industry, logistics,
-                  finance, business. Aliquam ultrices venenatis mauris. Vestibulum luctus et.</p>
-              </div>
-              <div class="card-footer bg-light">
-                <div class="client-info">
-                  <h6>John Doe</h6>
-                  <small>Lorem Ipsum</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-wrapper">
-            <div class="top-image">
-              <img src="{{ base_url }}img/testinomial.png" alt="testimonials">
-            </div>
-            <div class="box text-center btn-grad-2">
-              <div class="card-body text-white">
-                <div class="start-ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-                <p>Aliquam ultrices venenatis mauris. Vestibulum ante ipsum primis in faucibus orci industry, logistics,
-                  finance, business. Aliquam ultrices venenatis mauris. Vestibulum luctus et.</p>
-              </div>
-              <div class="card-footer bg-light">
-                <div class="client-info">
-                  <h6>John Doe</h6>
-                  <small>Lorem Ipsum</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    
     <!-- feedback -->
     <div id="feedback">
       <a href="#" class="btn btn-info btn-grad btn-lg" data-toggle="modal" data-target="#feedback-modal">
@@ -186,30 +146,13 @@
             <article class="card-body mx-auto" style="max-width: 400px;">
               <h4 class="card-title mt-3 pb-3 text-center">Feedback</h4>
               <form action="../feedback/saveFeedback" method="POST">
-                <div class="form-group input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                  </div>
-                  <input name="fullname" class="form-control" placeholder="Full name" type="text">
-                </div> <!-- form-group// -->
-                <div class="form-group input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-                  </div>
-                  <input name="email" class="form-control" placeholder="Email address" type="email">
-                </div> <!-- form-group// -->
-                <div class="form-group">
-                  <textarea class="form-control" name="feedback-message" rows="5"
-                    placeholder="Write your message"></textarea>
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-primary btn-grad btn-block"> Submit Feedback</button>
-                </div> <!-- form-group// -->
-              </form>
+                    <input type="hidden" name="type" value="enterprise">
+                  {% include 'feedback.html' %}
+                  </form>
             </article>
           </div>
 
         </div>
       </div>
     </div>
-{% endblock %}
+  {% endblock%}

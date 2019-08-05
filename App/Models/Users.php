@@ -21,23 +21,6 @@ class Users extends \Core\Model
         $phone = $params['phone'];
         $password = $params['password'];
         $newpassword = password_hash($password, PASSWORD_DEFAULT);
-//        $mail = new PHPMailer;
-//        $mail->isSMTP();
-//        $mail->SMTPAuth = true; 
-//        $mail->Username = 'ganesh.golla435@gmail.com';
-//        $mail->Password = 'ganesh435';                           // SMTP password
-//        $mail->SMTPSecure = 'tls';     
-//            $mail->setFrom('ganesh.golla435@gmail.com', 'Ganesh');
-//            $mail->addAddress($email, $name);
-//            $mail->Subject  = $subject;
-//            $mail->Body     = $message;
-//            if(!$mail->send()) {
-//              echo 'Message was not sent.';
-//              echo 'Mailer error: ' . $mail->ErrorInfo;
-//            } else {
-//              echo 'Message has been sent.';
-//            }
-
         
         try {
             //$db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);

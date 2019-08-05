@@ -17,7 +17,8 @@ public function sendMail($email,$name,$body,$subject,$message){
         $mail2->SMTPAuth = true; 
         $mail2->Username = 'ganesh.golla435@gmail.com';
         $mail2->Password = 'ganesh435';                           // SMTP password
-        $mail2->SMTPSecure = 'tls';     
+        $mail2->SMTPSecure = 'tls';   
+        $mail2->IsHTML(true); 
         $mail2->Port = 587;   
         $mail2->setFrom(FromMil, FromName);
         $mail2->addAddress($email, $name);
@@ -25,7 +26,7 @@ public function sendMail($email,$name,$body,$subject,$message){
         $mail2->Body     = $body;
         if(!$mail2->send()) {
           echo 'Message was not sent.';
-          echo 'Mailer error: ' . $mail->ErrorInfo;
+          echo 'Mailer error: ' . $mail2->ErrorInfo;
         } else {
               
         }
@@ -38,6 +39,7 @@ public function sendMail($email,$name,$body,$subject,$message){
         $mail->Password = 'ganesh435';                           // SMTP password
         $mail->SMTPSecure = 'tls';     
         $mail->Port = 587;   
+        $mail->IsHTML(true); 
         $mail->setFrom($email, $name);
         $mail->addAddress(orgMail, FromName);
         $mail->Subject  = $subject;

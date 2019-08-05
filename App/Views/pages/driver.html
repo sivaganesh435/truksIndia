@@ -1,156 +1,101 @@
 {% extends "base.php" %}
-{% block body%}
+{% block body%}   
 
-<main>
-    <!-- page-hero -->
+ <!-- page-hero -->
     <div class="page-hero-top btn-grad-2">
       <div class="hero-top-content text-center pb-5 pt-5">
-        <h1 class="pb-3 pt-3 text-white font-weight-bold">Drivers</h1>
+        <h1 class="pb-3 pt-3 text-white font-weight-bold">Are looking turn Kilometers into money?</h1>
       </div>
     </div>
     <!-- page-content -->
-    <div class="page-content bg-light about-content">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-lg-8 offset-lg-2 pb-5 pt-5">
-            <h3 class="pb-3">Drivers</h3>
-            <p class="pb-3">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum
-              est notare
-              quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum. Claritas est etiam
-              processus dynamicus, qui sequitur mutationem consuetudium lectorum </p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. vitae nulla sint fuga quam
-              a iste praesentium, ex soluta ullam tempora, esse blanditiis animi omnis similique pariatur. Distinctio,
-              accusamus numquam repudiandae quaerat soluta voluptates debitis!</p>
+    <div class="page-content about-content pb-md-4">
+      <div class="bg-light pt-md-4 pb-md-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-7 pb-5 pt-5 pr-lg-5">
+              <h4 class="pb-3">Drivers</h4>
+              <p class="pb-3">Being a Driver is easy! Head over to the Driver page, fill it out, and our Executives will be in touch shortly to go over the process. </p>
+              <p>As a Truks India driver, your major responsibilities will be to pick up the user's Product/Parcel on-time and deliver the parcel to the specified drop off location. Above all, it is the responsibility of the TruksIndia driver to act as a helping hand to the user/Customer wherever required.</p>
+              <div>
+                  <strong class="pb-2 d-block">Who We're Looking For</strong>
+                  <ul>
+                    <li>1. Friendly, customer-oriented personality</li>
+                    <li>2. Honest, and on time reporting at pickup location</li>
+                    <li>3. Truck insurance, and clean Driving record</li>
+                  </ul>
+              </div>
+            </div>
+            <div class="col-12 mt-lg-5 mb-lg-5 col-lg-5">
+                <article class="card shadow mx-auto" style="max-width: 500px;">
+                    <h4 class="card-title mt-5 pb-3 text-center">Driver Enquiry</h4>
+                    <form action="../enquiries/enquiryForm" class="px-lg-5" method="POST">
+            		<input type="hidden" name="type" value="driver">
+          		{% include 'pagesForms.html' %}
+          		</form>
+                </article>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- enquery form -->
-    <div class="enquery-form-wrapper pt-5 pb-5">
-      <div class="enquery-form-overlay"></div>
-      <div class="container pt-md-3">
-        <form action="../enquiries/enquiryForm" method="POST">
-            <input type="hidden" name="type" value="driver">
-          {% include 'blocks.html' %}
-          </form>
-      </div>
-
-    </div>
-    <!-- testimonials -->
-    <div class="section-full section-testimonials-wrapper pt-5 pb-5">
-      <div class="container">
-        <!-- TITLE START-->
-        <div class="section-head text-center pt-3">
-          <h2 data-title="feedback">clients-feedback</h2>
-          <div class="mt-separator-outer">
-            <div class="mt-separator bg-primary"></div>
-          </div>
-        </div>
-        <!-- TITLE END-->
-        <div class="section-testimonials owl-carousel owl-theme">
-          <div class="card-wrapper">
-            <div class="top-image">
-              <img src="img/testinomial.png" alt="">
-            </div>
-            <div class="box text-center btn-grad-2">
-              <div class="card-body text-white">
-                <div class="start-ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-                <p>Aliquam ultrices venenatis mauris. Vestibulum ante ipsum primis in faucibus orci industry, logistics,
-                  finance, business. Aliquam ultrices venenatis mauris. Vestibulum luctus et.</p>
-              </div>
-              <div class="card-footer bg-light">
-                <div class="client-info">
-                  <h6>John Doe</h6>
-                  <small>Lorem Ipsum</small>
-                </div>
+      <div class="section-join-truksindia bg-gray-2 pt-5 pb-5">
+      <div class="container pb-3">
+          <div class="row">
+            <div class="col-12">
+              <div class="header  pb-4 text-center">
+                <h3>Why Join TruksIndia</h3>
               </div>
             </div>
-          </div>
-          <div class="card-wrapper">
-            <div class="top-image">
-              <img src="img/testinomial.png" alt="">
-            </div>
-            <div class="box text-center btn-grad-2">
-              <div class="card-body text-white">
-                <div class="start-ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
+            <div class="col-md-4">
+              <div class="mt-icon-box-wraper card">
+                <div class="card-icon">
+                  <div class="icon-wrapper mb-4 mt-1">
+                      <i class="flaticon-wallet"></i>
+                  </div>
                 </div>
-                <p>Aliquam ultrices venenatis mauris. Vestibulum ante ipsum primis in faucibus orci industry, logistics,
-                  finance, business. Aliquam ultrices venenatis mauris. Vestibulum luctus et.</p>
-              </div>
-              <div class="card-footer bg-light">
-                <div class="client-info">
-                  <h6>John Doe</h6>
-                  <small>Lorem Ipsum</small>
-                </div>
+                <div class="icon-content text-center">
+                    <h4 class="mt-tilte">Earn more</h4>
+                    <p>Craving to earn more? Sign up with our truksindia and satisfy your cravings to earn extra with every ride.</p>
+                  </div>
               </div>
             </div>
-          </div>
-          <div class="card-wrapper">
-            <div class="top-image">
-              <img src="img/testinomial.png" alt="">
+            <div class="col-md-4">
+                <div class="mt-icon-box-wraper card">
+                  <div class="card-icon">
+                    <div class="icon-wrapper mb-4 mt-1">
+                        <i class="flaticon-credit-card"></i>
+                    </div>
+                  </div>
+                  <div class="icon-content text-center">
+                      <h4 class="mt-tilte">Advance Payment</h4>
+                      <p>Worried about the payments? We pay more than 100% amount to the driver in advance. Moreover, the outstanding amount will be transferred to your account within a day.</p>
+                    </div>
+                </div>
             </div>
-            <div class="box text-center btn-grad-2">
-              <div class="card-body text-white">
-                <div class="start-ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
+            <div class="col-md-4">
+                <div class="mt-icon-box-wraper card">
+                  <div class="card-icon">
+                    <div class="icon-wrapper mb-4 mt-1">
+                        <i class="flaticon-customer-service"></i>
+                    </div>
+                  </div>
+                  <div class="icon-content text-center">
+                      <h4 class="mt-tilte">Support</h4>
+                      <p>We provide round the clock support for our Drivers, Call center through our team of professionals.</p>
+                    </div>
                 </div>
-                <p>Aliquam ultrices venenatis mauris. Vestibulum ante ipsum primis in faucibus orci industry, logistics,
-                  finance, business. Aliquam ultrices venenatis mauris. Vestibulum luctus et.</p>
-              </div>
-              <div class="card-footer bg-light">
-                <div class="client-info">
-                  <h6>John Doe</h6>
-                  <small>Lorem Ipsum</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-wrapper">
-            <div class="top-image">
-              <img src="img/testinomial.png" alt="">
-            </div>
-            <div class="box text-center btn-grad-2">
-              <div class="card-body text-white">
-                <div class="start-ratings">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-                <p>Aliquam ultrices venenatis mauris. Vestibulum ante ipsum primis in faucibus orci industry, logistics,
-                  finance, business. Aliquam ultrices venenatis mauris. Vestibulum luctus et.</p>
-              </div>
-              <div class="card-footer bg-light">
-                <div class="client-info">
-                  <h6>John Doe</h6>
-                  <small>Lorem Ipsum</small>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-     <!-- feedback -->
-     <div id="feedback">
-        <a href="#" class="btn btn-info btn-grad btn-lg" data-toggle="modal" data-target="#feedback-modal">feedback</a>
-      </div>
+    
+    <!-- feedback -->
+    <div id="feedback">
+      <a href="#" class="btn btn-info btn-grad btn-lg" data-toggle="modal" data-target="#feedback-modal">
+        <span class="d-none d-md-block">Feedback</span>
+        <span class="d-block d-md-none"><i class="fa fa-commenting-o" aria-hidden="true"></i></span>
+      </a>
+    </div>
       <!-- The feedback Modal -->
       <div class="modal feedback-modal" id="feedback-modal">
         <div class="modal-dialog">
@@ -175,5 +120,5 @@
           </div>
         </div>
       </div>
-  </main>
+
 {% endblock %}

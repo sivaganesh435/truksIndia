@@ -53,29 +53,34 @@ class Home extends \Core\Controller
     
     public function signUpForm()
     {
+//        print_r($_POST);
+//        die();
         $data = users::create($_POST);
         if($data){
-            View::renderTemplate('Home/index.html', ["base_url" =>BASE_URL,'sucess'=>true
-        ]);
+            return 1;
+//            View::renderTemplate('Home/index.html', ["base_url" =>BASE_URL,'sucess'=>true
+//        ]);
         }
         
     }
     
     public function loginForm()
     {
+        
         $password = $_POST['password'];
         $data = users::getByEmail($_POST['email']);
         $hash = $data[0]['password'];
+        
         if(password_verify($password, $hash)){
+            
             session_start();
             $_SESSION["user"] = $data;
 //            $_SESSION["lastname"] = "Parker";
         }
         else{
-            return false;
+            View::renderTemplate('Home/index.html', ["base_url" =>BASE_URL]);
         }
-//        print_r($data[0]['password']);
-//        die();
+        
         if($data){
             View::renderTemplate('Home/index.html', ["base_url" =>BASE_URL,'session'=>$_SESSION
         ]);

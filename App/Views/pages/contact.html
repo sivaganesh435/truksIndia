@@ -1,8 +1,8 @@
 {% extends "base.php" %}
 {% block body %}
 
-    <main>
-    <div class="page-hero-top btn-grad">
+
+    <div class="page-hero-top btn-grad-2">
       <div class="hero-top-content text-center pb-5 pt-5">
         <h1 class="pb-3 pt-3 text-white font-weight-bold">Get In Touch</h1>
       </div>
@@ -14,26 +14,24 @@
             <div class="address-wrapper widget widget-about pt-5">
               <h3 class="pb-4">Address</h3>
               <ul>
-                <li> <i class="fa fa-phone"></i> <b class="text-uppercase">Tel :</b> 7075575239
+                <li> <i class="fa fa-phone"></i> <b class="text-uppercase">Tel :</b>+91-7075575239
                 </li>
                 <li><i class="fa fa-envelope"></i> <b class="text-uppercase">Email :
                   </b>info@truksindia.com</li>
-                <li><i class="fa fa-location-arrow"></i> <b class="text-uppercase">Location :</b>
+                <li><i class="fa fa-location-arrow"></i> <b class="text-uppercase">CORPORATE OFFICE :</b>
                   IO BUSINESS CENTER, Unit No.406,B3,4th Floor, Manjeera Trinity Corporate, Kukatpally, Hyderabad-500072
                 </li>
               </ul>
             </div>
             <div class="location-map mt-5">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d487293.2774677608!2d78.12784000692413!3d17.412808363619543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C+Telangana!5e0!3m2!1sen!2sin!4v1564212891123!5m2!1sen!2sin"
-                width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237.8363401394058!2d78.39256890766882!3d17.48929568360372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb918c551d95c1%3A0x985538ab210811be!2sIQBC+-+IQ+Business+Center!5e0!3m2!1sen!2sin!4v1564902221979!5m2!1sen!2sin" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
           </div>
           <div class="col-md-6  col-lg-6 offset-lg-1">
             <div class="pb-4 pt-5">
               <h3>Leave a message</h3>
             </div>
-              {% if success == true %}
+             {% if success == true %}
                     <div class="alert alert-success">
                         <strong>Success!</strong> Your request was successfully recorded, will contact you very soon.
                     </div>
@@ -87,7 +85,6 @@
         </div>
       </div>
     </div>
-  </main>
-
+  
 
 {% endblock %}

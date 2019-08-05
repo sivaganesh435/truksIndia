@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Truks India</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <!-- fonts -->
@@ -28,14 +31,15 @@
       <div class="container">
         <div class="header-topbarbox-2">
           <div class="header-contact text-right">
-            <div class="header-contact-item"><i class="icon fa fa-phone"></i> 7075575239</div>
-            <div class="header-contact-item"><i class="icon fa fa-envelope-o"></i>info@truksindia.com</div>
-            <div class="header-contact-item"><i class="icon fa fa-clock-o"></i> Mon to Fri : 07:00 - 18:00</div>
+            <div class="header-contact-item"><i class="icon fa fa-phone"></i>+91 7075575239</div>
+            <div class="header-contact-item"><i class="icon fa fa-envelope-o"></i> info@truksindia.com</div>
+            <div class="header-contact-item"><i class="icon fa fa-clock-o"></i> Mon to Sat : 07:00 - 18:00</div>
           </div>
         </div>
       </div>
     </div>
   </header>
+
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg shadow-sm sticky-top">
     <div class="container">
@@ -152,7 +156,7 @@
                         <strong>Success!</strong> Your have successfully registered.
                     </div>
                 {% endif %}
-              <form action="home/signUpForm" method="POST">
+                <form action="#" method="POST" id="signUp">
                 <div class="form-group input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-user"></i> </span>
@@ -188,6 +192,49 @@
         </div>
       </div>
     </div>
+    <div class="modal signup-modal" id="enquirymodal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body">
+            <article class="mx-auto" style="max-width: 500px;">
+              <h4 class="card-title mt-5 pb-3 text-center">Enquiry</h4>
+              <form class="px-lg-5">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                  </div>
+                  <input name="fullname" class="form-control" placeholder="Full name" type="text">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                  </div>
+                  <input name="email" class="form-control" placeholder="Email address" type="email">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-file-text"></i> </span>
+                  </div>
+                  <input name="subject" class="form-control" placeholder="Subject" type="text">
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                  <textarea class="form-control" name="feedback-message" rows="5"
+                    placeholder="Write your message"></textarea>
+                </div>
+                <div class="form-group mb-5">
+                  <button type="submit" class="btn btn-primary btn-grad btn-block"> Submit Enquiry</button>
+                </div> <!-- form-group// -->
+              </form>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <main>
     <!-- The login Modal -->
@@ -199,7 +246,7 @@
   </main>
 
   <!-- footer -->
-  <footer class="site-footer">
+<footer class="site-footer">
     <!-- Footer Top Part -->
     <div class="footer-top pt-5 pb-5">
       <div class="container">
@@ -208,17 +255,16 @@
           <div class="col-lg-4 col-md-4">
             <div class="widget widget-about">
               <h4 class="widget-title">About Company</h4>
-              <p>Lorem ipsum this is dummy text dolor sit amet check this text, consecte tura dipiscing elit, sed do
-                eiusmod tempor doler is incididunt. </p>
-                <ul>
-                  <li> <i class="fa fa-phone"></i> <b class="text-uppercase">Tel :</b> 7075575239
-                  </li>
-                  <li><i class="fa fa-envelope"></i> <b class="text-uppercase">Email :
-                    </b>info@truksindia.com</li>
-                  <li><i class="fa fa-location-arrow"></i> <b class="text-uppercase">Location :</b>
-                    IO BUSINESS CENTER, Unit No.406,B3,4th Floor, Manjeera Trinity Corporate, Kukatpally, Hyderabad-500072
-                  </li>
-                </ul>
+ <p>We are India’s first largest vendor management company providing a comprehensive logistics solutions catering the needs of our logistics partners. Headquartered in Hyderabad,Truks India are an on-demand logistics service provider that takes care of all customer's intra & intercity logistic business requirements.</p>
+              <ul>
+                <li> <i class="fa fa-phone"></i> <b class="text-uppercase">Tel :</b>+91-7075575239
+                </li>
+                <li><i class="fa fa-envelope"></i> <b class="text-uppercase">Email :
+                  </b>info@truksindia.com</li>
+                <li><i class="fa fa-location-arrow"></i> <b class="text-uppercase">Corporate Office :</b>
+                  IO BUSINESS CENTER, Unit No.406,B3,4th Floor, Manjeera Trinity Corporate, Kukatpally, Hyderabad-500072
+                </li>
+              </ul>
             </div>
           </div>
           <!-- Useful Links -->
@@ -226,9 +272,10 @@
             <div class="widget widget-services">
               <h4 class="widget-title">Useful links</h4>
               <ul>
-                <li><a href="#">Drive</a></li>
-                <li><a href="#">Deliver</a></li>
-                <li><a href="#">Services</a></li>
+                <li><a href="/pages/enterprise">Enterprise</a></li>
+                <li><a href="/pages/driver">Drivers</a></li>
+                <li><a href="/pages/vendor">Vendors</a></li>
+                <li><a href="/pages/packersandmovers">Packers & Movers</a></li>
                 <li><a href="/pages/about">About</a></li>
                 <li><a href="/pages/contact">Contact</a></li>
               </ul>
@@ -269,7 +316,7 @@
     <div class="footer-bottom">
       <div class="container pt-4 pb-4">
         <div class="text-center">
-          <span class="copyrights-text">© 2019 Truksindia. All Rights Reserved. Designed By Harish</span>
+          <span class="copyrights-text">© 2019 Truksindia. All Rights Reserved. Designed By <a href='http://www.telvitechnologies.com' >Telvi</a></span>
         </div>
       </div>
     </div>
@@ -281,6 +328,28 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="{{ base_url }}js/owl.carousel.min.js"></script>
   <script src="{{ base_url }}js/custom.js"></script>
+  <script>
+      $(document).ready(function(){
+          var pageURL = $(location).attr("href");
+          
+          var URL =pageURL.split('/');
+          console.log(URL[4]);
+          $("#")
+          $("#signUp").submit(function(e){
+                e.preventDefault();
+            });
+          $("#signUp").submit(function(){
+              $.ajax({
+                 "type":"POST",
+                 "url":"home/signUpForm",
+                 "data":$("#signUp").serialize(),
+                 success:function(data){
+                     console.log(data);
+                 }
+              });
+          });
+      });
+  </script>
 </body>
 
 </html>
