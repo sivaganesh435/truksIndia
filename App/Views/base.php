@@ -71,6 +71,9 @@
               <a class="nav-link hvr-underline-from-left" href="/pages/packersandmovers">Packers & Movers</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link hvr-underline-from-left" href="/pages/cabs">Corporate Cabs</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link hvr-underline-from-left" href="/pages/about">About</a>
             </li>
             <li class="nav-item">
@@ -108,7 +111,7 @@
               <p class="text-center">Secure login into truks india</p>
               <!-- <hr> -->
               <!-- <p class="text-success text-center">Some message goes here</p> -->
-              <form action="home/loginForm" method="POST">
+              <form action="#" method="POST" id="signin">
                 <div class="form-group">
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -128,7 +131,7 @@
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-grad btn-block"> Login </button>
                 </div> <!-- form-group// -->
-                <p class="text-center"><a href="#" data-toggle="modal" data-target="#loginmodal" class="btn">Forgot password?</a></p>
+                <!--<p class="text-center"><a href="#" data-toggle="modal" data-target="#loginmodal" class="btn">Forgot password?</a></p>-->
               </form>
             </article>
           </div>
@@ -203,24 +206,31 @@
           <div class="modal-body">
             <article class="mx-auto" style="max-width: 500px;">
               <h4 class="card-title mt-5 pb-3 text-center">Enquiry</h4>
-              <form class="px-lg-5">
+              <form class="px-lg-5" action="#" id="enquiry">
+                <input name="type" class="form-control"  id="enquiryType" type="hidden">
                 <div class="form-group input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                   </div>
-                  <input name="fullname" class="form-control" placeholder="Full name" type="text">
+                    <input name="fullname" class="form-control" placeholder="Full name" id="enquiryName" type="text">
                 </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                  </div>
+                    <input name="phone" class="form-control" placeholder="Phone number" id="enquiryPhone" type="text">
+                </div>
                 <div class="form-group input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                   </div>
-                  <input name="email" class="form-control" placeholder="Email address" type="email">
+                    <input name="email" class="form-control" placeholder="Email address" type="email" id="enquiryEmail">
                 </div> <!-- form-group// -->
                 <div class="form-group input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-file-text"></i> </span>
                   </div>
-                  <input name="subject" class="form-control" placeholder="Subject" type="text">
+                    <input name="subject" class="form-control" placeholder="Subject" type="text" >
                 </div> <!-- form-group// -->
                 <div class="form-group">
                   <textarea class="form-control" name="feedback-message" rows="5"
@@ -323,32 +333,55 @@
   </footer>
 
   <!-- scripts -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="{{ base_url }}js/owl.carousel.min.js"></script>
   <script src="{{ base_url }}js/custom.js"></script>
   <script>
       $(document).ready(function(){
+          
           var pageURL = $(location).attr("href");
           
           var URL =pageURL.split('/');
           console.log(URL[4]);
-          $("#")
-          $("#signUp").submit(function(e){
-                e.preventDefault();
+          $("#signUp").submit(function(e) {
+              e.preventDefault(); // avoid to execute the actual submit of the form.
+               var form = $(this);
+                $.ajax({
+                    type: "POST",
+                    url: "{{ base_url}}home/signUpForm",
+                    data: form.serialize(), // serializes the form's elements.
+                    success: function(data)
+                    {
+                        location.reload(true);// show response from the php script.
+                    }
+                  });
             });
-          $("#signUp").submit(function(){
-              $.ajax({
-                 "type":"POST",
-                 "url":"home/signUpForm",
-                 "data":$("#signUp").serialize(),
-                 success:function(data){
-                     console.log(data);
-                 }
-              });
-          });
-      });
+            $("#signin").submit(function(e) {
+              e.preventDefault(); // avoid to execute the actual submit of the form.
+               var form = $(this);
+               console.log($("#signin").serialize());
+               console.log($("#signin:input[name='email']"));
+//               $("#form_id :input[name='"+input_name+"']"); 
+                $.ajax({
+                    type: "POST",
+                    url: "{{ base_url}}home/loginForm",
+                    data: $("#signin").serialize(), // serializes the form's elements.
+                    success: function(data)
+                    {
+//                        location.reload(true);// show response from the php script.
+                    }
+                  });
+            });
+//            $(".indexForm").submit(function(e)){
+//                e.preventDefault();
+//                $("#enquiryType").val();
+//                
+//            });
+            
+        });
   </script>
 </body>
 

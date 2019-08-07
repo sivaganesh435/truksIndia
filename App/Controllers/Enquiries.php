@@ -11,8 +11,7 @@ class Enquiries extends \Core\Controller
     
     public function enquiryForm()
     {
-//        print_r();
-//        die();
+        
         $name = $_POST['name'];
         $phone = $_POST['phone'];
         $email = $_POST['email'];
@@ -34,6 +33,8 @@ class Enquiries extends \Core\Controller
     
     public function saveEnquiry(){
 //        print_r($_POST);
+//        print_r("hii");
+//        die();
        $data = enquiry::create($_POST);
        if($data){
            View::renderTemplate('pages/enquiry.html', [

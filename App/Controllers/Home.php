@@ -66,6 +66,8 @@ class Home extends \Core\Controller
     
     public function loginForm()
     {
+//        print_r($_POST);
+//        die();
         
         $password = $_POST['password'];
         $data = users::getByEmail($_POST['email']);
@@ -78,10 +80,12 @@ class Home extends \Core\Controller
 //            $_SESSION["lastname"] = "Parker";
         }
         else{
+            die('ok');
             View::renderTemplate('Home/index.html', ["base_url" =>BASE_URL]);
         }
         
         if($data){
+            die('ookk');
             View::renderTemplate('Home/index.html', ["base_url" =>BASE_URL,'session'=>$_SESSION
         ]);
         }

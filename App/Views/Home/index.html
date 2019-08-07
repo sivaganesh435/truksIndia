@@ -50,7 +50,7 @@
             <!-- Tab panes -->
             <div class="tab-content form-wrapper">
               <div id="enterprises" class="enterprises container tab-pane show active">
-                <form action="enquiries/enquiryForm" method="POST">
+                  <form action="enquiries/enquiryForm" method="POST" class="indexForm">
                     <input name="type" type="hidden" value="enterprise">
                   {% include 'blocks.html' %}
                   </form>
@@ -95,7 +95,7 @@
             <div class="tab-content form-wrapper">
 
               <div id="drivers" class="drivers container tab-pane show active">
-                <form action="enquiries/enquiryForm" method="POST">
+                <form action="enquiries/enquiryForm" method="POST" class="indexForm">
                     <input type="hidden" name="type" value="driver">
                   {% include 'blocks.html' %}
                   </form>
@@ -141,7 +141,7 @@
             <div class="tab-content form-wrapper">
 
               <div id="vendors" class="vendors container tab-pane show active">
-                <form action="enquiries/enquiryForm" method="POST">
+                <form action="enquiries/enquiryForm" method="POST" class="indexForm">
                     <input type="hidden" name="type" value="vendor">
                   {% include 'blocks.html' %}
                   </form>
@@ -187,7 +187,7 @@
             <div class="tab-content form-wrapper">
 
               <div id="ondemand-booking" class="ondemand-booking container tab-pane show active">
-                <form action="enquiries/enquiryForm" method="POST">
+                <form action="enquiries/enquiryForm" method="POST" class="indexForm">
                     <input type="hidden" name="type" value="ondemand">
                   {% include 'blocks.html' %}
                   </form>              

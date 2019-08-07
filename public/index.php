@@ -38,5 +38,6 @@ $router->add('{controller}/{action}');
 //$router->add('enquiries/{page:[a-zA-Z]+$}', ['controller' => 'enquir', 'action' => 'page']);
 $router->add('{controller}/{id:\d+}/{action}');
 $router->add('admin/{controller}/{action}', ['namespace' => 'Admin']);
+$router->add('home/signUpForm',['controller' => 'Home', 'action' => 'signUpForm']);
     
 $router->dispatch($_SERVER['QUERY_STRING']);
