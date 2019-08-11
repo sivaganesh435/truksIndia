@@ -18,8 +18,10 @@ class Enquiry extends \Core\Model
  
 
     public static function create($params){ 
-        $type = $params['form'];
-        $name = $params['name'];
+//        print_r($params);
+//        die();
+        $type = $params['type'];
+        $name = $params['fullname'];
         $email = $params['email'];
         $phone = $params['phone'];
         $subject =$params['subject'];
@@ -34,7 +36,7 @@ class Enquiry extends \Core\Model
                 $db = static::getDB();
 
                 $stmt = "INSERT INTO Enquiries (type, name, phone,email,subject,message)
-                        VALUES ('".$type."','". $name."',". $phone.",'".$email."','".$subject."','".$message."')";
+                        VALUES ('".$type."','". $name."',". $phone.",'".$email."','".$subject."','".$messageFromClient."')";
                 if ($db->query($stmt))
                 return $db->lastInsertId();
             
@@ -44,21 +46,48 @@ class Enquiry extends \Core\Model
         }
     }
 
-    public static function getAll()
-    {
-        //$host = 'localhost';
-        //$dbname = 'mvc';
-        //$username = 'root';
-        //$password = 'secret';
-    
+     public static function getAll($param){
+//         print_r($param);
+//         die();
+         $var = ($param-1)*5;
+        
         try {
-            //$db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
             $db = static::getDB();
 
-            $stmt = $db->query('SELECT id, title, content FROM post ORDER BY created_at');
-            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $stmt = "SELECT * FROM Enquiries LIMIT ".$var.", 5" ;
+            if ($db->query($stmt))
+            $result = $db->query($stmt)->fetchAll(PDO::FETCH_ASSOC);    
+            return $result;
+            
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+     }
+     
+     public static function getPage(){
+        
+        try {
+            $db = static::getDB();
 
-            return $results;
+            $stmt = "SELECT COUNT(*) FROM  Enquiries" ;
+            if ($db->query($stmt))
+            $result = $db->query($stmt)->fetchAll(PDO::FETCH_ASSOC);    
+            return $result;
+            
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+     }
+     
+     public static function getEnquirybyId($params){ 
+        $id = $params;
+                
+        try {
+            $db = static::getDB();
+            $stmt = "SELECT * FROM Enquiries WHERE id='".$id."'";
+            if ($db->query($stmt))
+            $result = $db->query($stmt)->fetchAll(PDO::FETCH_ASSOC);    
+            return $result;
             
         } catch (PDOException $e) {
             echo $e->getMessage();

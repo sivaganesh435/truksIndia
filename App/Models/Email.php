@@ -11,16 +11,17 @@ use PHPMailer\PHPMailer\Exception;
 class Email extends \Core\Model
 {
 public function sendMail($email,$name,$body,$subject,$message){
+
      $mail2 = new PHPMailer();
         $mail2->IsSMTP();                                     // Set mailer to use SMTP
         $mail2->Host = 'smtp.gmail.com';
         $mail2->SMTPAuth = true; 
-        $mail2->Username = 'ganesh.golla435@gmail.com';
-        $mail2->Password = 'ganesh435';                           // SMTP password
+        $mail2->Username = 'info@truksindia.com';
+        $mail2->Password = 'Truksindia@123$';                           // SMTP password
         $mail2->SMTPSecure = 'tls';   
         $mail2->IsHTML(true); 
         $mail2->Port = 587;   
-        $mail2->setFrom(FromMil, FromName);
+        $mail2->setFrom(FromMail, FromName);
         $mail2->addAddress($email, $name);
         $mail2->Subject  = FromName;
         $mail2->Body     = $body;
@@ -35,8 +36,8 @@ public function sendMail($email,$name,$body,$subject,$message){
         $mail->IsSMTP();                                     // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true; 
-        $mail->Username = 'ganesh.golla435@gmail.com';
-        $mail->Password = 'ganesh435';                           // SMTP password
+        $mail->Username = 'info@truksindia.com';
+        $mail->Password = 'Truksindia@123$';                           // SMTP password
         $mail->SMTPSecure = 'tls';     
         $mail->Port = 587;   
         $mail->IsHTML(true); 

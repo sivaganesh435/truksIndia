@@ -14,9 +14,10 @@ class Pages extends \Core\Controller
         $url_segments     = explode('/', $url);
         $page = end($url_segments);
        View::renderTemplate('pages/'.$page.'.html', [
-            'base_url' => BASE_URL
+            'base_url' => BASE_URL,'session'=>$_SESSION
         ]); 
     }
+    
     
     
     

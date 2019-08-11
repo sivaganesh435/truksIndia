@@ -15,7 +15,14 @@ require '../App/constants.php';
 /**
  * Twig
  */
-Twig_Autoloader::register();
+//Twig_Autoloader::register();
+
+
+session_start();
+$loader = new \Twig_Loader_Filesystem('../App/Views/pages');
+$twig = new \Twig_Environment($loader);
+
+$twig->addGlobal('Avinash', 'svsdvdvbuo');
 
 
 /**
@@ -25,6 +32,11 @@ error_reporting(E_ALL);
 set_error_handler('Core\Error::errorHandler');
 set_exception_handler('Core\Error::exceptionHandler');
 
+function getGlobals() {
+    return array(
+        'session'   => $_SESSION,
+    ) ;
+}
 
 /**
  * Routing

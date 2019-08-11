@@ -31,12 +31,12 @@
             <div class="pb-4 pt-5">
               <h3>Leave a message</h3>
             </div>
-             {% if success == true %}
-                    <div class="alert alert-success">
-                        <strong>Success!</strong> Your request was successfully recorded, will contact you very soon.
-                    </div>
-                {% endif %}
-              <form class="pr-md-5" action="../enquiries/contactForm" method="POST">
+                <div id="contactStatus" style="display:none">
+                  <div class="alert alert-success">
+                    <strong>Success!</strong> Your enquiry succesfully submitted.
+                </div>
+                </div>
+              <form class="pr-md-5" action="#" id="contactForm" method="POST">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">

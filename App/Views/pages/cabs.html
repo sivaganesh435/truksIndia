@@ -21,7 +21,7 @@
             <div class="col-12 mt-lg-5 mb-lg-5 col-lg-5">
                 <article class="card shadow mx-auto" style="max-width: 500px;">
                     <h4 class="card-title mt-5 pb-3 text-center">Packers & Movers Enquiry</h4>
-                    <form action="../enquiries/enquiryForm" class="px-lg-5" method="POST">
+                    <form action="#" class="px-lg-5" id="cabsForm" method="POST">
             		<input type="hidden" name="type" value="cabs">
           		{% include 'pagesForms.html' %}
           		</form>
@@ -104,7 +104,12 @@
           <div class="modal-body">
             <article class="card-body mx-auto" style="max-width: 400px;">
               <h4 class="card-title mt-3 pb-3 text-center">Feedback</h4>
-              <form action="../feedback/saveFeedback" method="POST">
+              <div id="feedbackStatus" style="display:none">
+                  <div class="alert alert-success">
+                    <strong>Success!</strong> Your feedback succesfully submitted.
+                </div>
+                </div>
+              <form action="#" id="feedbackForm" method="POST">
                     <input type="hidden" name="type" value="cabs">
                   {% include 'feedback.html' %}
                   </form>

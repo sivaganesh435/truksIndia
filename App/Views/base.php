@@ -27,7 +27,7 @@
 
 <body>
   <header>
-    <div class="topbar d-none d-md-block">
+    <div class="topbar d-none btn-grad d-md-block">
       <div class="container">
         <div class="header-topbarbox-2">
           <div class="header-contact text-right">
@@ -42,47 +42,62 @@
 
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg shadow-sm sticky-top">
-    <div class="container">
+    <div class="container-fluid">
       <a class="navbar-brand" href="/">
         <img src="{{ base_url }}img/Truksindia-logo.png" class="img-fluid">
       </a>
-
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav text-right">
-            <li class="nav-item">
+      <div class="collapse navbar-collapse main-menu" id="collapsibleNavbar">
+          <ul class="navbar-nav text-right" >
+            <li class="nav-item home ">
               <a class="nav-link hvr-underline-from-left" href="/">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item enterprise">
               <a class="nav-link hvr-underline-from-left" href="/pages/enterprise">Enterprise</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item driver">
               <a class="nav-link hvr-underline-from-left" href="/pages/driver">Drivers</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item vendor ">
               <a class="nav-link hvr-underline-from-left" href="/pages/vendor">Vendors</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item packersandmovers">
               <a class="nav-link hvr-underline-from-left" href="/pages/packersandmovers">Packers & Movers</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item cabs">
               <a class="nav-link hvr-underline-from-left" href="/pages/cabs">Corporate Cabs</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item about">
               <a class="nav-link hvr-underline-from-left" href="/pages/about">About</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item contact">
+               
               <a class="nav-link hvr-underline-from-left" href="/pages/contact">Contact</a>
             </li>
-            {% if session.user %}
-            <li class="nav-item">
-              <a class="nav-link hvr-underline-from-left" href="#" data-toggle="modal" data-target="#loginmodal">{{ session.user[0].name }}</a>
-            </li>
+            {% if session.user == TRUE %}
+            
+                {% if session.isAdmin == 1 %}
+                <li class="nav-item">
+                  <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {{ session.name }}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="/pages/adminPanel">Dashboard</a>
+                    </div>
+                  </div>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link hvr-underline-from-left" href="#" data-toggle="modal" data-target="#loginmodal">{{ session.name }}</a>
+                </li>
+                {% endif %}
+            <button type="button" class="btn btn-outline-warning" id="logout">Logout</button>
             {% else %}
             <li class="nav-item">
               <a class="nav-link hvr-underline-from-left" href="#" data-toggle="modal" data-target="#loginmodal">Login</a>
@@ -111,6 +126,7 @@
               <p class="text-center">Secure login into truks india</p>
               <!-- <hr> -->
               <!-- <p class="text-success text-center">Some message goes here</p> -->
+              <p id="signinError"></p>
               <form action="#" method="POST" id="signin">
                 <div class="form-group">
                   <div class="input-group">
@@ -154,35 +170,34 @@
             <article class="card-body mx-auto" style="max-width: 400px;">
               <h4 class="card-title mt-3 text-center">Create Account</h4>
               <p class="text-center">Get started with your free account</p>
-              {% if success == true %}
-                    <div class="alert alert-success">
-                        <strong>Success!</strong> Your have successfully registered.
-                    </div>
-                {% endif %}
+              <p id="signupError"></p>
+                    
                 <form action="#" method="POST" id="signUp">
+                    <input type="hidden" name="id" id="signUpId">
+                    <input type="hidden" name="originalPass" id="sinUpPass">
                 <div class="form-group input-group">
-                  <div class="input-group-prepend">
+                  <div class="input-group-prepend"> 
                     <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                   </div>
-                    <input name="name" class="form-control" placeholder="Full name" type="text" required="">
+                    <input name="name" class="form-control" id="signUpName" placeholder="Full name" type="text" required="">
                 </div> <!-- form-group// -->
                 <div class="form-group input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                   </div>
-                    <input name="email" class="form-control" placeholder="Email address" type="email" required="">
+                    <input name="email" class="form-control" id="signUpEmail" placeholder="Email address" type="email" required="">
                 </div> <!-- form-group// -->
                 <div class="form-group input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
                   </div>
-                  <input name="phone" class="form-control" placeholder="Phone number" type="text">
+                    <input name="phone" class="form-control" placeholder="Phone number" id="signUpPhone" type="text">
                 </div> <!-- form-group// -->
                 <div class="form-group input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                   </div>
-                    <input class="form-control "name="password" placeholder="Create password" type="password" required="">
+                    <input class="form-control "name="password" placeholder="Create password" type="password" >
                 </div> <!-- form-group// -->
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-grad btn-block"> Create Account </button>
@@ -195,6 +210,7 @@
         </div>
       </div>
     </div>
+    
     <div class="modal signup-modal" id="enquirymodal">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -206,7 +222,12 @@
           <div class="modal-body">
             <article class="mx-auto" style="max-width: 500px;">
               <h4 class="card-title mt-5 pb-3 text-center">Enquiry</h4>
-              <form class="px-lg-5" action="#" id="enquiry">
+              <div id="enquiryStatus" style="display:none">
+                  <div class="alert alert-success">
+                    <strong>Success!</strong> Your enquiry succesfully submitted.
+                </div>
+              </div>
+              <form class="px-lg-5" action="#" id="enquiryForm">
                 <input name="type" class="form-control"  id="enquiryType" type="hidden">
                 <div class="form-group input-group">
                   <div class="input-group-prepend">
@@ -230,14 +251,14 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-file-text"></i> </span>
                   </div>
-                    <input name="subject" class="form-control" placeholder="Subject" type="text" >
+                    <input name="subject" class="form-control" placeholder="Subject" id="enquirySub" type="text" >
                 </div> <!-- form-group// -->
                 <div class="form-group">
-                  <textarea class="form-control" name="feedback-message" rows="5"
+                  <textarea class="form-control" name="feedback-message" id="enquiryMessage" rows="5"
                     placeholder="Write your message"></textarea>
                 </div>
                 <div class="form-group mb-5">
-                  <button type="submit" class="btn btn-primary btn-grad btn-block"> Submit Enquiry</button>
+                    <button type="submit" id="enquirybutton" style="display: block" class="btn btn-primary btn-grad btn-block"> Submit Enquiry</button>
                 </div> <!-- form-group// -->
               </form>
             </article>
@@ -257,6 +278,7 @@
 
   <!-- footer -->
 <footer class="site-footer">
+   
     <!-- Footer Top Part -->
     <div class="footer-top pt-5 pb-5">
       <div class="container">
@@ -340,48 +362,236 @@
   <script src="{{ base_url }}js/owl.carousel.min.js"></script>
   <script src="{{ base_url }}js/custom.js"></script>
   <script>
-      $(document).ready(function(){
-          
+      $(document).ready(function()
+      {
+          console.log("hii");
+          console.log({{ session.user }})
           var pageURL = $(location).attr("href");
-          
           var URL =pageURL.split('/');
           console.log(URL[4]);
+          if(URL[4] == undefined)
+          {
+              $(".main-menu").find('.home').addClass('active');
+          }
+          $(".main-menu").find('.'+URL[4]).addClass('active');
           $("#signUp").submit(function(e) {
-              e.preventDefault(); // avoid to execute the actual submit of the form.
+              e.preventDefault(); 
                var form = $(this);
+               html ='';
                 $.ajax({
                     type: "POST",
                     url: "{{ base_url}}home/signUpForm",
-                    data: form.serialize(), // serializes the form's elements.
+                    data: form.serialize(),
                     success: function(data)
                     {
-                        location.reload(true);// show response from the php script.
+                        res = JSON.parse(data);
+                        if(res.success)
+                        {
+                        location.reload(true);
+                        }
+                        else
+                        {
+                            console.log(res.error);
+                           html="<div class='alert alert-danger'>"+res.error+"</div>";
+                           $("#signupError").html(html);
+                        }
+                        
                     }
                   });
             });
             $("#signin").submit(function(e) {
-              e.preventDefault(); // avoid to execute the actual submit of the form.
+              e.preventDefault(); 
                var form = $(this);
                console.log($("#signin").serialize());
                console.log($("#signin:input[name='email']"));
-//               $("#form_id :input[name='"+input_name+"']"); 
                 $.ajax({
                     type: "POST",
                     url: "{{ base_url}}home/loginForm",
-                    data: $("#signin").serialize(), // serializes the form's elements.
+                    data: $("#signin").serialize(), 
                     success: function(data)
                     {
-//                        location.reload(true);// show response from the php script.
+                        res = JSON.parse(data);
+                        if(res.success)
+                        {
+                        location.reload(true);
+                        }
+                        else
+                        {
+                            console.log(res.error);
+                           html="<div class='alert alert-danger'>"+res.error+"</div>";
+                           $("#signinError").html(html);
+                        }
                     }
                   });
             });
-//            $(".indexForm").submit(function(e)){
-//                e.preventDefault();
-//                $("#enquiryType").val();
-//                
-//            });
-            
-        });
+            $("#logout").on('click',function(e)
+            {
+                e.preventDefault(); 
+                 $.ajax({
+                    type: "POST",
+                    url: "{{ base_url}}home/logout",
+                    data: '', 
+                    success: function(data)
+                    {
+                         window.location.href='/';
+                    }
+                 });
+            });
+                
+            $("#enterpriseForm").submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "{{ base_url}}enquiries/enquiryForm",
+                    data: $("#enterpriseForm").serialize(), 
+                    success: function(data)
+                    {
+                        res=JSON.parse(data);
+                        $("#enquiryType").val(res.type);
+                        $("#enquiryName").val(res.name);
+                        $("#enquiryPhone").val(res.phone);
+                        $("#enquiryEmail").val(res.email);
+                        $("#enquirymodal").modal('show');
+                        $("#enterpriseForm").trigger("reset");
+                        
+                    }
+                  });
+            });
+            $("#driverForm").submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "{{ base_url}}enquiries/enquiryForm",
+                    data: $("#driverForm").serialize(), 
+                    success: function(data)
+                    {
+                        res=JSON.parse(data);
+                        $("#enquiryType").val(res.type);
+                        $("#enquiryName").val(res.name);
+                        $("#enquiryPhone").val(res.phone);
+                        $("#enquiryEmail").val(res.email);
+                        $("#enquirymodal").modal('show');
+                        $("#driverForm").trigger("reset");
+                    }
+                  });
+            });
+            $("#vendorForm").submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "{{ base_url}}enquiries/enquiryForm",
+                    data: $("#vendorForm").serialize(), 
+                    success: function(data)
+                    {
+                        res=JSON.parse(data);
+                        $("#enquiryType").val(res.type);
+                        $("#enquiryName").val(res.name);
+                        $("#enquiryPhone").val(res.phone);
+                        $("#enquiryEmail").val(res.email);
+                        $("#enquirymodal").modal('show');
+                        $("#vendorForm").trigger("reset");
+                    }
+                  });
+            });
+            $("#demandForm").submit(function(e){
+                e.preventDefault();
+               $.ajax({
+                    type: "POST",
+                    url: "{{ base_url}}enquiries/enquiryForm",
+                    data: $("#demandForm").serialize(), 
+                    success: function(data)
+                    {
+                        res=JSON.parse(data);
+                        $("#enquiryType").val(res.type);
+                        $("#enquiryName").val(res.name);
+                        $("#enquiryPhone").val(res.phone);
+                        $("#enquiryEmail").val(res.email);
+                        $("#enquirymodal").modal('show');
+                        $("#demandForm").trigger("reset");
+                    }
+                  });
+            });
+            $("#cabsForm").submit(function(e){
+                e.preventDefault();
+               $.ajax({
+                    type: "POST",
+                    url: "{{ base_url}}enquiries/enquiryForm",
+                    data: $("#cabsForm").serialize(), 
+                    success: function(data)
+                    {
+                        res=JSON.parse(data);
+                        $("#enquiryType").val(res.type);
+                        $("#enquiryName").val(res.name);
+                        $("#enquiryPhone").val(res.phone);
+                        $("#enquiryEmail").val(res.email);
+                        $("#enquirymodal").modal('show');
+                        $("#cabsForm").trigger("reset");
+                    }
+                  });
+            });
+            $("#enquiryForm").submit(function(e){
+               e.preventDefault();
+               $.ajax({
+                    type: "POST",
+                    url: "{{ base_url}}enquiries/saveEnquiry",
+                    data: $("#enquiryForm").serialize(), 
+                    success: function(data)
+                    {
+                        res=JSON.parse(data);
+                        $("#enquiryForm").trigger("reset");
+                        $("#enquiryStatus").css('display','block');
+                    }
+                  });
+            });
+            $("#contactForm").submit(function(e)
+            {
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "{{ base_url}}enquiries/contactForm",
+                    data: $("#contactForm").serialize(), 
+                    success: function(data)
+                    {
+   //                     res=JSON.parse(data);
+                        $("#contactForm").trigger("reset");
+                        $("#contactStatus").css('display','block');
+                    }
+                });
+            });
+            $("#feedbackForm").submit(function(e)
+            {
+                e.preventDefault();
+                $.ajax
+                ({
+                    type: "POST",
+                    url: "{{ base_url}}feedback/saveFeedback",
+                    data: $("#feedbackForm").serialize(), 
+                    success: function(data)
+                    {
+   //                     res=JSON.parse(data);
+                        $("#feedbackForm").trigger("reset");
+                        $("#feedbackStatus").css('display','block');
+                    }
+               });
+            });
+      
+      usersPage(1);
+      enquirypage(1);
+      feedbackPage(1);
+      
+      $("#mutliforms").on('slid.bs.carousel', function(e){
+          console.log("hiii");
+        $('.carousel-item.active ul li ').find(".active").removeClass('active');
+        e.preventDefault()
+        var carousel_item =  $(".carousel-item.active").data('value');
+        console.log($(".carousel-item.active ul li").find('.'+carousel_item));
+        console.log(carousel_item);
+        $(".carousel-item.active ul li a").find('.'+carousel_item).addClass('active');
+     });
+      
+      
+      
+    });
   </script>
 </body>
 
