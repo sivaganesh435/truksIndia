@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Truks India</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ base_url }}img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ base_url }}img/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ base_url }}img/apple-icon-57x57.png">
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <!-- fonts -->

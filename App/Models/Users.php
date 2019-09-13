@@ -108,7 +108,7 @@ class Users extends \Core\Model
 
             $stmt = "UPDATE Users SET isAdmin=1 WHERE id='".$id."' " ;
             if ($db->query($stmt))
-            $result = $db->query($stmt)->fetchAll(PDO::FETCH_ASSOC);    
+            $result = $db->query($stmt);    
             return $result;
             
         } catch (PDOException $e) {

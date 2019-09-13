@@ -13,11 +13,11 @@
 
     <!-- slider -->
     
-    <div id="mutliforms" class="carousel carousel-fade" data-ride="carousel">
+    <div id="mutliforms" class="carousel carousel-fade" data-ride="carousel" data-pause="hover">
       <!-- The slideshow -->
       <div class="carousel-inner">
         <!-- slide-1 start -->
-        <div class="carousel-item active" data-value="enterprise">
+        <div class="carousel-item active" data-value="enterprises">
           <img src="{{ base_url }}img/enterprise-banner.png" alt="enterprise" />
           <div class="carousel-caption text-left">
             <div class="tab-content">
@@ -30,21 +30,25 @@
             </div>
             <!-- Nav tabs -->
             <ul class="nav nav-tabs tabs-wrapper" role="tablist">
-              <li class="nav-item">
+              <li class="nav-item enterprises">
                 <a class="nav-link enterprises active" data-toggle="tab" href="#enterprises" data-target="#mutliforms"
                   data-slide-to="0">Enterprise</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item corporate-cabs">
+                <a class="nav-link corporate-cabs" data-toggle="tab" href="#corporate-cabs" data-target="#mutliforms"
+                  data-slide-to="1">Corporate cabs</a>
+              </li>
+               <li class="nav-item drivers">
                 <a class="nav-link drivers " data-toggle="tab" href="#drivers" data-target="#mutliforms"
-                  data-slide-to="1">Drivers</a>
+                  data-slide-to="2">Drivers</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item vendors">
                 <a class="nav-link vendors" data-toggle="tab" href="#vendors" data-target="#mutliforms"
-                  data-slide-to="2">Vendors</a>
+                  data-slide-to="3">Vendors</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item ondemand-booking">
                 <a class="nav-link ondemand-booking" data-toggle="tab" href="#ondemand-booking"
-                  data-target="#mutliforms" data-slide-to="3">Packers & Movers</a>
+                  data-target="#mutliforms" data-slide-to="4">Packers & Movers</a>
               </li>
             </ul>
 
@@ -60,8 +64,57 @@
           </div>
         </div>
 
-        <!-- slide-2 start -->
-        <div class="carousel-item" data-value="driver">
+         <!-- slide-2 start -->
+        <div class="carousel-item" data-value="corporate-cabs">
+          <img src="{{ base_url }}img/corporateCabs.png" alt="corporate cabs" />
+          <div class="carousel-caption text-left">
+            <div class="tab-content">
+              <div class="container">
+                <div class="pb-4 col-md-9 mx-auto text-center">
+                  <h3 class="pb-2">Become a part of Truks India family</h3>
+                  <p> We are India’s first largest vendor management company providing a comprehensive logistics solutions</p>
+                </div>
+              </div>
+            </div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs tabs-wrapper" role="tablist">
+              <li class="nav-item enterprises">
+                <a class="nav-link enterprises" data-toggle="tab" href="#enterprises" data-target="#mutliforms"
+                  data-slide-to="0">Enterprises</a>
+              </li>
+               <li class="nav-item corporate-cabs">
+                <a class="nav-link corporate-cabs active" data-toggle="tab" href="#corporate-cabs"
+                  data-target="#mutliforms" data-slide-to="1">Corporate cabs</a>
+              </li>
+              <li class="nav-item drivers">
+                <a class="nav-link drivers" data-toggle="tab" href="#drivers" data-target="#mutliforms"
+                  data-slide-to="2">Drivers</a>
+              </li>
+              <li class="nav-item vendors">
+                <a class="nav-link vendors" data-toggle="tab" href="#vendors" data-target="#mutliforms"
+                  data-slide-to="3">Vendors</a>
+              </li>
+              <li class="nav-item ondemand-booking">
+                <a class="nav-link ondemand-booking" data-toggle="tab" href="#ondemand-booking"
+                  data-target="#mutliforms" data-slide-to="4">Packers & Movers</a>
+              </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content form-wrapper">
+
+              <div id="corporate-cabs" class="corporate-cabs container tab-pane show active">
+                <form action="#" method="POST" id="corporateForm">
+	                <input type="hidden" name="type" id="formType" value="corporate-cabs">
+	              {% include 'blocks.html' %}
+              	</form>              
+			   </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- slide-3 start -->
+        <div class="carousel-item" data-value="drivers">
           <img src="{{ base_url }}img/drivers.jpg" alt="driver" />
           <div class="carousel-caption text-left">
             <div class="tab-content">
@@ -74,21 +127,25 @@
             </div>
             <!-- Nav tabs -->
             <ul class="nav nav-tabs tabs-wrapper" role="tablist">
-              <li class="nav-item">
+              <li class="nav-item enterprises">
                 <a class="nav-link enterprises" data-toggle="tab" href="#enterprises" data-target="#mutliforms"
                   data-slide-to="0">Enterprises</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item corporate-cabs">
+                <a class="nav-link corporate-cabs" data-toggle="tab" href="#corporate-cabs" data-target="#mutliforms"
+                  data-slide-to="1">Corporate cabs</a>
+              </li>
+              <li class="nav-item drivers">
                 <a class="nav-link drivers active" data-toggle="tab" href="#drivers" data-target="#mutliforms"
-                  data-slide-to="1">Drivers</a>
+                  data-slide-to="2">Drivers</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item vendors">
                 <a class="nav-link vendors" data-toggle="tab" href="#vendors" data-target="#mutliforms"
-                  data-slide-to="2">Vendors</a>
+                  data-slide-to="3">Vendors</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item ondemand-booking">
                 <a class="nav-link ondemand-booking" data-toggle="tab" href="#ondemand-booking"
-                  data-target="#mutliforms" data-slide-to="3">Packers & Movers</a>
+                  data-target="#mutliforms" data-slide-to="4">Packers & Movers</a>
               </li>
             </ul>
 
@@ -106,7 +163,7 @@
           </div>
         </div>
 
-        <!-- slide-3 start -->
+        <!-- slide-4 start -->
         <div class="carousel-item" data-value="vendors">
           <img src="{{ base_url }}img/vendors.jpg" alt="vendors" />
           <div class="carousel-caption text-left">
@@ -120,21 +177,25 @@
             </div>
             <!-- Nav tabs -->
             <ul class="nav nav-tabs tabs-wrapper" role="tablist">
-              <li class="nav-item">
+              <li class="nav-item enterprises">
                 <a class="nav-link enterprises" data-toggle="tab" href="#enterprises" data-target="#mutliforms"
                   data-slide-to="0">Enterprises</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item corporate-cabs">
+                <a class="nav-link corporate-cabs" data-toggle="tab" href="#corporate-cabs" data-target="#mutliforms"
+                  data-slide-to="1">Corporate cabs</a>
+              </li>
+              <li class="nav-item drivers">
                 <a class="nav-link drivers" data-toggle="tab" href="#drivers" data-target="#mutliforms"
-                  data-slide-to="1">Drivers</a>
+                  data-slide-to="2">Drivers</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item vendors">
                 <a class="nav-link vendors active" data-toggle="tab" href="#vendors" data-target="#mutliforms"
-                  data-slide-to="2">Vendors</a>
+                  data-slide-to="3">Vendors</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item ondemand-booking">
                 <a class="nav-link ondemand-booking" data-toggle="tab" href="#ondemand-booking"
-                  data-target="#mutliforms" data-slide-to="3">Packers & Movers</a>
+                  data-target="#mutliforms" data-slide-to="4">Packers & Movers</a>
               </li>
             </ul>
 
@@ -152,9 +213,9 @@
           </div>
         </div>
 
-        <!-- slide-4 start -->
+        <!-- slide-5 start -->
         <div class="carousel-item" data-value="ondemand-booking">
-          <img src="{{ base_url }}img/packers-banner.png" alt="packer and movers" />
+          <img src="{{ base_url }}img/packers-movers.png" alt="packer and movers" />
           <div class="carousel-caption text-left">
             <div class="tab-content">
               <div class="container">
@@ -166,21 +227,25 @@
             </div>
             <!-- Nav tabs -->
             <ul class="nav nav-tabs tabs-wrapper" role="tablist">
-              <li class="nav-item">
+              <li class="nav-item enterprises">
                 <a class="nav-link enterprises" data-toggle="tab" href="#enterprises" data-target="#mutliforms"
                   data-slide-to="0">Enterprises</a>
               </li>
-              <li class="nav-item">
+               <li class="nav-item corporate-cabs">
+                <a class="nav-link corporate-cabs" data-toggle="tab" href="#corporate-cabs" data-target="#mutliforms"
+                  data-slide-to="1">Corporate cabs</a>
+              </li>
+              <li class="nav-item drivers">
                 <a class="nav-link drivers" data-toggle="tab" href="#drivers" data-target="#mutliforms"
-                  data-slide-to="1">Drivers</a>
+                  data-slide-to="2">Drivers</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item vendors">
                 <a class="nav-link vendors" data-toggle="tab" href="#vendors" data-target="#mutliforms"
-                  data-slide-to="2">Vendors</a>
+                  data-slide-to="3">Vendors</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item ondemand-booking">
                 <a class="nav-link ondemand-booking active" data-toggle="tab" href="#ondemand-booking"
-                  data-target="#mutliforms" data-slide-to="3">Packers & Movers</a>
+                  data-target="#mutliforms" data-slide-to="4">Packers & Movers</a>
               </li>
             </ul>
 
@@ -192,12 +257,15 @@
                     <input type="hidden" name="type" id="formType" value="ondemand">
                   {% include 'blocks.html' %}
                   </form>              
-		</div>
+			</div>
             </div>
           </div>
         </div>
+       
       </div>
     </div>
+
+
 
     <!-- enterprises offers -->
     <div class="section-enterprises">

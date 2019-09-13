@@ -19,10 +19,7 @@ require '../App/constants.php';
 
 
 session_start();
-$loader = new \Twig_Loader_Filesystem('../App/Views/pages');
-$twig = new \Twig_Environment($loader);
 
-$twig->addGlobal('Avinash', 'svsdvdvbuo');
 
 
 /**
